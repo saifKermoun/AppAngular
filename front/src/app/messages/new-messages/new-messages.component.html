@@ -1,0 +1,21 @@
+<div class="card card-body">
+  <div class="row">
+    <div class="col-md-12 12 col-xs-12">
+      <form method="post">
+
+        <div class="form-group ">
+          <label class="control-label " for="message">
+            Message
+          </label>
+          <textarea [(ngModel)]="message.message" class="form-control" cols="40" id="message" name="message" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+          <div>
+            <button class="btn btn-primary " (click)="post()" name="addMsg">Add message</button>
+            <button class="btn btn-danger" (click)="msg.shows(false)"  name="cnlMsg">Annuler</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

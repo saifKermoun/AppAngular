@@ -1,0 +1,49 @@
+<div class="card card-body" style="margin: 5px;">
+  <h1>Register</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-12 12 col-xs-12">
+      <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group ">
+          <label class="control-label" for="nom">
+            Nom
+          </label>
+          <input class="form-control" id="nom" name="nom" placeholder="Nom" type="text" formControlName="nom"/>
+        </div>
+        <div class="form-group ">
+          <label class="control-label" for="prenom">
+            Prenom
+          </label>
+          <input class="form-control" id="prenom" name="prenom" placeholder="Prenom" type="text" formControlName="prenom"/>
+        </div>
+        <div class="form-group ">
+          <label class="control-label" for="email">
+            Email
+          </label>
+          <input class="form-control" [ngClass]="{'error': isValid('email')}" id="email" name="email" placeholder="email" type="email" formControlName="email"/>
+        </div>
+        <div class="form-group ">
+          <label class="control-label" for="password">
+            Password
+          </label>
+          <input class="form-control" [ngClass]="{'error': isValid('password')}" id="password" name="password" placeholder="password" type="password" formControlName="password"/>
+        </div>
+        <div class="form-group ">
+          <label class="control-label" for="password">
+            Confirm Password
+          </label>
+          <input class="form-control" [ngClass]="{'error': isValid('confirmPassword')}" id="confirmpassword" name="confirmpassword" placeholder="confirm password" type="password" formControlName="confirmPassword"/>
+        </div>
+        <div class="alert alert-danger" *ngIf="form.errors?.mismatchedFields" role="alert"> Les mots de passe ne sont pas identique. </div>
+
+        <div class="form-group">
+          <div>
+            <button class="btn btn-primary" name="addUsr">
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

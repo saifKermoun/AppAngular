@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-12 com-md-12 col-lg-12">
+    <h1>Page d'accueil !</h1>
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-4 col-lg-4" *ngFor="let msg of ws.messages | async">
+    <div class="card card-group" >
+      <div class="card-body">{{ msg.message }}</div>
+    </div>
+  </div>
+</div>
+

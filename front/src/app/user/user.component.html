@@ -1,0 +1,35 @@
+<div class="card card-body" style="margin: 5px;">
+  <h1>User</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-12 12 col-xs-12">
+      <form method="post">
+        <div class="col-md-12 col-xs-12">
+          <div class="form-group">
+            <label class="control-label " for="nom">Nom</label>
+            <input class="form-control" [(ngModel)]="model.nom_user" id="nom" name="nom" placeholder="nom" type="text"/>
+          </div>
+          <div class="form-group">
+            <label class="control-label " for="email">Prenom</label>
+            <input class="form-control" [(ngModel)]="model.prenom_user" id="prenom" name="prenom" placeholder="prenom" type="text"/>
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12">
+          <div class="form-group">
+            <label class="control-label" for="email">Email</label>
+            <input class="form-control" [(ngModel)]="model.email_user" id="email" name="email" placeholder="@email" type="email"/>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="password">Password</label>
+            <input class="form-control" [(ngModel)]="model.password_user" id="password" name="password" placeholder="password" type="password"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <button class="btn btn-success" (click)="post()" name="addMsg">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

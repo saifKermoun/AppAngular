@@ -1,0 +1,16 @@
+<h1>Messages Board <button class="btn btn-info btn-sm float-right" *ngIf="auths.isAuthenticated" (click)="shows(true)">Add msg</button></h1>
+<hr>
+
+<app-new-messages *ngIf="show"></app-new-messages>
+
+<div class="card card-body" *ngFor="let msg of webService.messages | async">
+
+    <h5 class="card-title">Ecrit par : <a [routerLink]="['/message', msg.id_user]">{{ msg.nom_user}}</a>
+      <span class="float-right">
+        <button class="btn btn-sm btn-primary">Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteMsg(msg.id_msg)">Delete</button>
+      </span>
+    </h5>
+    <p class="card-text">{{msg.message}}</p>
+</div>
+
