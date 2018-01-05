@@ -3,16 +3,8 @@ var app = express();
 var router = express.Router();
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
-var mysql = require('mysql');
+var db = require('../connectDB');
 
-var db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'scratch'
-});
-
-db.connect();
 
 var users = {
     nom_user :  '',

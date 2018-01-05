@@ -1,16 +1,8 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
-var mysql = require('mysql');
+var db = require('../connectDB');
 
-var db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'scratch'
-});
-
-db.connect();
 
 var messages = {
         id_user: '',

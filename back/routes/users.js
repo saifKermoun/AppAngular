@@ -1,16 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-var mysql = require('mysql');
-
-var db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'scratch'
-});
-
-db.connect();
+var db = require('../connectDB');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
